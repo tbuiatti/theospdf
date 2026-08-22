@@ -252,6 +252,9 @@
     <ClInclude Include="..\src\Selection.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\TheosLocate.h">
+      <Filter>src</Filter>
+    </ClInclude>
     <ClInclude Include="..\src\Settings.h">
       <Filter>src</Filter>
     </ClInclude>
@@ -555,6 +558,9 @@
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Selection.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TheosLocate.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="..\src\SimpleBrowserWindow.cpp">

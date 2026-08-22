@@ -72,7 +72,7 @@ enum {
     CmdDebugCorruptMemory = 381, CmdDebugCrashMe = 382, CmdDebugDownloadSymbols = 383,
     CmdDebugTestApp = 384, CmdDebugShowNotif = 385, CmdDebugStartStressTest = 386,
     CmdDebugTogglePredictiveRender = 387, CmdDebugToggleRtl = 388, CmdToggleAntiAlias = 389,
-    CmdNone = 390,
+    CmdLocateOnBoard = 390, CmdNone = 391,
 
     /* range for file history */
     CmdFileHistoryFirst,

@@ -775,6 +775,12 @@ static MenuDef menuDefContext[] = {
         CmdCopySelection,
     },
     {
+        // TheosPDF fork: locate the selected refdes on a running TheosBV board.
+        // plain string (not _TRN) to avoid touching the translation catalogs.
+        "&Locate on Board",
+        CmdLocateOnBoard,
+    },
+    {
         _TRN("Create Annotation From Selection"),
         (UINT_PTR)menuDefCreateAnnotFromSelection,
     },
@@ -928,6 +934,7 @@ static UINT_PTR disableIfDirectoryOrBrokenPDF[] = {
 
 UINT_PTR disableIfNoSelection[] = {
     CmdCopySelection,
+    CmdLocateOnBoard,
     CmdTranslateSelectionWithDeepL,
     CmdTranslateSelectionWithGoogle,
     CmdSearchSelectionWithWikipedia,
@@ -1881,6 +1888,7 @@ void OnWindowContextMenu(MainWindow* win, int x, int y) {
 
     switch (cmdId) {
         case CmdCopySelection:
+        case CmdLocateOnBoard:
         case CmdTranslateSelectionWithGoogle:
         case CmdTranslateSelectionWithDeepL:
         case CmdSearchSelectionWithGoogle:

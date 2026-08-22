@@ -192,6 +192,7 @@ export const commands = [
     "CmdDebugTogglePredictiveRender", "Debug: Toggle Predictive Rendering",
     "CmdDebugToggleRtl", "Debug: Toggle Rtl",
     "CmdToggleAntiAlias", "Toggle Anti-Alias Rendering",
+    "CmdLocateOnBoard", "Locate on Board in TheosBV",
     "CmdNone", "Do nothing",
 ];
 

@@ -74,6 +74,7 @@
 #include "Print.h"
 #include "SearchAndDDE.h"
 #include "Selection.h"
+#include "TheosLocate.h" // TheosPDF fork: "Locate on Board" sender
 #include "StressTesting.h"
 #include "HomePage.h"
 #include "SumatraDialogs.h"
@@ -5958,6 +5959,16 @@ static LRESULT FrameOnCommand(MainWindow* win, HWND hwnd, UINT msg, WPARAM wp, L
         case CmdCopySelection:
             CopySelectionInTabToClipboard(tab);
             break;
+
+        case CmdLocateOnBoard: {
+            // TheosPDF fork: send the current selection to a running TheosBV.
+            // selection strings are UTF-8, which is what the protocol expects.
+            bool isTextOnlySelectionOut;
+            TempStr selText = GetSelectedTextTemp(tab, " ", isTextOnlySelectionOut);
+            if (!str::IsEmpty(selText)) {
+                LocateOnBoardTheosBV(selText);
+            }
+        } break;
 
         case CmdSelectAll:
             OnSelectAll(win);
