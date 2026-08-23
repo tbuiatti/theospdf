@@ -770,6 +770,14 @@ static const char* HandleSearchCmd(const char* cmd, bool* ack) {
             return next;
         }
     }
+    // Put the term into the find bar so the reader's Find Next (F3) / Find Prev (Shift+F3) can
+    // step through the OTHER occurrences after this DDE search. Without this the find bar stays
+    // empty, the FindNext toolbar button stays disabled, and F3 does nothing (the notification
+    // just repeats "... (again)"). This matters a lot for TheosBV board->schematic search, where a
+    // refdes like "UT2" also matches notes ("Close to UT2") and substrings ("VOUT2") - the user
+    // needs F3 to walk to the real component. Mirrors FindSelection().
+    HwndSetText(win->hwndFindEdit, term.Get());
+    Edit_SetModify(win->hwndFindEdit, FALSE);
     bool wasModified = true;
     bool showProgress = true;
     FindTextOnThread(win, TextSearch::Direction::Forward, term, wasModified, showProgress);
