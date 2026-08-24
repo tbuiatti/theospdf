@@ -96,8 +96,11 @@
 
 constexpr const char* kRestrictionsFileName = "sumatrapdfrestrict.ini";
 
-constexpr const char* kSumatraWindowTitle = "SumatraPDF";
-constexpr const WCHAR* kSumatraWindowTitleW = L"SumatraPDF";
+// Window-caption text only. The window CLASS (FRAME_CLASS_NAME "SUMATRA_PDF_FRAME") and the DDE
+// server (kSumatraDdeServer "SUMATRA") are deliberately left as-is so TheosBV still finds and talks
+// to this reader; only the visible title is rebranded to match kAppName.
+constexpr const char* kSumatraWindowTitle = "TheosPDF";
+constexpr const WCHAR* kSumatraWindowTitleW = L"TheosPDF";
 
 // used to show it in debug, but is not very useful,
 // so always disable
